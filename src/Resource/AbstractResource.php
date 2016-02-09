@@ -73,6 +73,14 @@ abstract class AbstractResource implements ResourceInterface
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
      * Gets the resource type.
      *
      * @VirtualProperty

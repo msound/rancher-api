@@ -38,6 +38,13 @@ interface ResourceInterface extends ClientAwareInterface
     public function reload();
 
     /**
+     * Gets the state of the resource.
+     *
+     * @return string
+     */
+    public function getState();
+
+    /**
      * Gets the resource or collection.
      *
      * @param string $linkName
