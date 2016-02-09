@@ -73,6 +73,14 @@ abstract class AbstractResource implements ResourceInterface
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
      * Gets the resource type.
      *
      * @VirtualProperty
@@ -100,5 +108,17 @@ abstract class AbstractResource implements ResourceInterface
     public function reload()
     {
         return $this->client->get($this->getUri(), static::class);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getLink($linkName, $class)
+    {
+        if (!isset($this->links[$linkName])) {
+            throw new InvalidActionException(sprintf('Link "%s" not found.', $linkName));
+        }
+
+        return $this->client->get($this->links[$linkName], $class);
     }
 }

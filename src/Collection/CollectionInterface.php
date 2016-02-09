@@ -61,4 +61,17 @@ interface CollectionInterface extends ClientAwareInterface
      * @throws ColumnNotFoundException if the column does not exist.
      */
     public function sortBy($column);
+
+    /**
+     * Gets the resource or collection.
+     *
+     * @param string $linkName
+     * @param string $class
+     *
+     * @return object
+     *
+     * @throws InvalidActionException if the collection does not have URI.
+     */
+    public function getLink($linkName, $class);
+
 }

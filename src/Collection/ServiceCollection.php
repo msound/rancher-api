@@ -45,4 +45,23 @@ class ServiceCollection extends AbstractCollection
 
         throw new ResourceNotFoundException(sprintf('Service "%s" not found.', $id));
     }
+
+    /**
+     * Finds a service by name.
+     *
+     * @param string $name
+     *
+     * @return Service
+     * @throws ResourceNotFoundException
+     */
+    public function find($name)
+    {
+        foreach ($this->data as $service) {
+            if ($service->getName() === $name) {
+                return $service;
+            }
+        }
+
+        throw new ResourceNotFoundException(sprintf('Service "%s" not found.', $name));
+    }
 }

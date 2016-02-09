@@ -54,13 +54,32 @@ class EnvironmentCollection extends AbstractCollection
      */
     public function get($id)
     {
-        foreach ($this->data as $host) {
-            if ($host->getId() === $id) {
-                return $host;
+        foreach ($this->data as $env) {
+            if ($env->getId() === $id) {
+                return $env;
             }
         }
 
         throw new ResourceNotFoundException(sprintf('Environment "%s" not found.', $id));
+    }
+
+    /**
+     * Finds an environment by name.
+     *
+     * @param string $name
+     *
+     * @return Environment
+     * @throws ResourceNotFoundException
+     */
+    public function find($name)
+    {
+        foreach ($this->data as $env) {
+            if ($env->getName() === $name) {
+                return $env;
+            }
+        }
+
+        throw new ResourceNotFoundException(sprintf('Environment "%s" not found.', $name));
     }
 }
 
