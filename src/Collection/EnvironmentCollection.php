@@ -54,9 +54,9 @@ class EnvironmentCollection extends AbstractCollection
      */
     public function get($id)
     {
-        foreach ($this->data as $host) {
-            if ($host->getId() === $id) {
-                return $host;
+        foreach ($this->data as $env) {
+            if ($env->getId() === $id) {
+                return $env;
             }
         }
 
