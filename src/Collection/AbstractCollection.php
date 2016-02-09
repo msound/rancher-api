@@ -61,4 +61,16 @@ abstract class AbstractCollection implements CollectionInterface
 
         return $this->client->get($this->sortLinks[$column], static::class);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getLink($linkName, $class)
+    {
+        if (!isset($this->links[$linkName])) {
+            throw new InvalidActionException(sprintf('Link "%s" not found.', $linkName));
+        }
+
+        return $this->client->get($this->links[$linkName], $class);
+    }
 }

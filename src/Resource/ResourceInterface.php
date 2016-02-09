@@ -36,4 +36,16 @@ interface ResourceInterface extends ClientAwareInterface
      * @throws InvalidActionException if the resource does not have URI.
      */
     public function reload();
+
+    /**
+     * Gets the resource or collection.
+     *
+     * @param string $linkName
+     * @param string $class
+     *
+     * @return object
+     *
+     * @throws InvalidActionException if the collection does not have URI.
+     */
+    public function getLink($linkName, $class);
 }
