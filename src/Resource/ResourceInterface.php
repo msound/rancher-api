@@ -55,4 +55,14 @@ interface ResourceInterface extends ClientAwareInterface
      * @throws InvalidActionException if the collection does not have URI.
      */
     public function getLink($linkName, $class);
+
+    /**
+     * Perform action on resource.
+     *
+     * @param string $action
+     * @param array $data
+     *
+     * @throws InvalidActionException if the resource does not have action uri.
+     */
+    public function doAction($action, $data);
 }

@@ -121,4 +121,15 @@ abstract class AbstractResource implements ResourceInterface
 
         return $this->client->get($this->links[$linkName], $class);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    function doAction($action, $data) {
+        if (!isset($this->actions[$action])) {
+            throw new InvalidActionException(sprintf('Action "%s" not found.', $action));
+        }
+
+        $this->client->post($this->actions[$action], $data);
+    }
 }
