@@ -6,7 +6,7 @@ use Mauchede\RancherApi\Client\ClientAwareInterface;
 use Mauchede\RancherApi\Exception\ColumnNotFoundException;
 use Mauchede\RancherApi\Exception\InvalidActionException;
 use Mauchede\RancherApi\Resource\ResourceInterface;
-use Rancher\Exception\ResourceNotFoundException;
+use Mauchede\RancherApi\Exception\ResourceNotFoundException;
 
 /**
  * Interface CollectionInterface is implemented by all Rancher API collection classes.
