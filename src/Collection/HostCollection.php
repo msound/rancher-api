@@ -4,7 +4,7 @@ namespace Mauchede\RancherApi\Collection;
 
 use JMS\Serializer\Annotation\Type;
 use Mauchede\RancherApi\Resource\Host;
-use Rancher\Exception\ResourceNotFoundException;
+use Mauchede\RancherApi\Exception\ResourceNotFoundException;
 
 /**
  * HostCollection represents a Rancher collection typed as "collection".

@@ -4,7 +4,7 @@ namespace Mauchede\RancherApi\Collection;
 
 use JMS\Serializer\Annotation\Type;
 use Mauchede\RancherApi\Resource\Service;
-use Rancher\Exception\ResourceNotFoundException;
+use Mauchede\RancherApi\Exception\ResourceNotFoundException;
 
 /**
  * ServiceCollection represents a Rancher collection typed as "service".
