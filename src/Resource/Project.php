@@ -80,6 +80,19 @@ class Project extends AbstractResource
     }
 
     /**
+     * Filters the service for a specified name.
+     *
+     * @param string $name
+     *   The name of the service to filter for.
+     *
+     * @return ServiceCollection
+     */
+    public function filterServices($name)
+    {
+        return $this->client->get($this->links['services'] . '?name=' . $name, ServiceCollection::class);
+    }
+
+    /**
      * Gets the environments.
      *
      * @return EnvironmentCollection
@@ -87,6 +100,19 @@ class Project extends AbstractResource
     public function getEnvironments()
     {
         return $this->client->get($this->links['environments'], EnvironmentCollection::class);
+    }
+
+    /**
+     * Filters the environment for a specified name.
+     *
+     * @paran string $name
+     *   The name of the environment to filter for.
+     *
+     * @return EnvironmentCollection
+     */
+    public function filterEnvironments($name)
+    {
+        return $this->client->get($this->links['environments'] . '?name=' . $name, EnvironmentCollection::class);
     }
 
     /**
