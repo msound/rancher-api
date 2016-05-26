@@ -18,21 +18,28 @@ class Environment extends AbstractResource
      *
      * @Type("string")
      */
-    private $description;
+    protected $description;
 
     /**
      * @var string
      *
      * @Type("string")
      */
-    private $name;
+    protected $name;
 
     /**
      * @var string
      *
      * @Type("string")
      */
-    private $dockerCompose;
+    protected $dockerCompose;
+
+    /**
+     * @var string
+     *
+     * @Type("string")
+     */
+    protected $id;
 
     /**
      * Gets the description.
@@ -62,6 +69,10 @@ class Environment extends AbstractResource
         return 'environment';
     }
 
+    /**
+     * @param $description
+     * @return $this
+     */
     public function setDescription($description)
     {
         $this->description = $description;
@@ -69,18 +80,34 @@ class Environment extends AbstractResource
         return $this;
     }
 
+    /**
+     * @param $name
+     * @return mixed
+     */
     public function setName($name)
     {
         $this->name = $name;
 
-        return $name;
+        return $this;
     }
 
+    /**
+     * @param $dockerCompose
+     * @return $this
+     */
     public function setDockerComposer($dockerCompose)
     {
         $this->dockerCompose = $dockerCompose;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 
 }

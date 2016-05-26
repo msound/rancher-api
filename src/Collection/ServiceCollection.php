@@ -64,4 +64,18 @@ class ServiceCollection extends AbstractCollection
 
         throw new ResourceNotFoundException(sprintf('Service "%s" not found.', $name));
     }
+
+    /**
+     * Adds a new service
+     *
+     * @param Service $service
+     *
+     * @return $this
+     */
+    public function add(Service $service)
+    {
+        $this->client->post($this->getUri(), $service, array());
+
+        return $this->reload();
+    }
 }
