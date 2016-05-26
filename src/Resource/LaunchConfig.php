@@ -59,6 +59,20 @@ class LaunchConfig extends AbstractResource
     protected $command;
 
     /**
+     * @var boolean
+     *
+     * @Type("boolean")
+     */
+    protected $stdinOpen;
+
+    /**
+     * @var boolean
+     *
+     * @Type("boolean")
+     */
+    protected $tty;
+
+    /**
      * @return array
      */
     public function getDataVolumes()
@@ -171,5 +185,44 @@ class LaunchConfig extends AbstractResource
 
         return $this;
     }
+
+    /**
+     * @return boolean
+     */
+    public function getStdinOpen()
+    {
+        return $this->stdinOpen;
+    }
+
+    /**
+     * @param boolean $stdinOpen
+     * @return $this
+     */
+    public function setStdinOpen($stdinOpen)
+    {
+        $this->stdinOpen = $stdinOpen;
+
+        return $this;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getTty()
+    {
+        return $this->tty;
+    }
+
+    /**
+     * @param boolean $tty
+     * @return $this
+     */
+    public function setTty($tty)
+    {
+        $this->tty = $tty;
+
+        return $this;
+    }
+
 
 }

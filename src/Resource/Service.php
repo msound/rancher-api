@@ -48,6 +48,13 @@ class Service extends AbstractResource
     protected $startOnCreate;
 
     /**
+     * @var string
+     *
+     * @Type("string")
+     */
+    protected $state;
+
+    /**
      * Gets the name.
      *
      * @return string
@@ -139,6 +146,25 @@ class Service extends AbstractResource
     public function setStartOnCreate($startOnCreate)
     {
         $this->startOnCreate = $startOnCreate;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
+     * @param string $state
+     * @return $this
+     */
+    public function setState($state)
+    {
+        $this->state = $state;
 
         return $this;
     }
