@@ -152,6 +152,9 @@ class Client implements ClientInterface
     private function request($method, $uri, array $options = array())
     {
         $options['auth'] = array($this->accessKey, $this->secretKey);
+        // Force HTTP 1.0
+        // See https://github.com/jackalope/jackalope-jackrabbit/issues/89
+        $options['version'] = 1.0;
 
         return $this->httpClient->request($method, $uri, $options);
     }
